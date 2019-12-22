@@ -1,0 +1,33 @@
+{
+    "scripts": {
+        "start": "node src/main.js",
+        "deploy": "git push beta beta:master",
+        "dev": "nodemon src/main.js -e js,md,json",
+        "sync": "browser-sync start --proxy=localhost:3000 --files='**/*.css, **/*.pug, **/*.js' --ignore=node_modules --no-ui --no-notify",
+        "lint": "eslint src instance-provisioning"
+    },
+    "devDependencies": {
+        "babel-eslint": "^10.0.3",
+        "browser-sync": "^2.26.7",
+        "eslint": "^6.2.2",
+        "eslint-config-prettier": "^6.1.0",
+        "eslint-plugin-prettier": "^3.1.0",
+        "live-server": "^1.2.1",
+        "nodemon": "^1.19.1",
+        "prettier": "^1.18.2"
+    },
+    "dependencies": {
+        "body-parser": "^1.19.0",
+        "express": "^4.17.1",
+        "front-matter": "^3.0.2",
+        "fs-extra": "^8.1.0",
+        "less": "^3.9.0",
+        "less-middleware": "^3.1.0",
+        "lodash": "^4.17.15",
+        "marked": "^0.7.0",
+        "pug": "^2.0.3"
+    },
+    "prettier": {
+        "tabWidth": 4
+    }
+}

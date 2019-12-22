@@ -1,0 +1,170 @@
+extends layouts/master.pug
+
+mixin icon-benefit-item(title, iconSrc)
+    div.homepage__icon-benefit-item
+        .homepage__icon-benefit-icon
+            img(src=iconSrc, width="24", height="24")
+        div
+            p.homepage__icon-benefit-title #{title}
+
+mixin dx-benefit-item(codeExample, title)
+    div.homepage__dx-benefit-item
+        .homepage__dx-benefit-code-example #{codeExample}
+        p.homepage__dx-benefit-title #{title}
+
+mixin icon-bullet(title, iconSrc)
+    div.homepage__icon-bullet
+        img.icon.homepage__icon-bullet-icon(src=iconSrc, width="24", height="24")
+        div
+            p.homepage__icon-bullet-title #{title}
+
+mixin faq-item(question, answer)
+    div.homepage__faq-item
+        p.homepage__faq-item-question #{question}
+        p.homepage__faq-item-answer !{answer}
+
+block styles
+    link(rel="stylesheet", href="/public/styles/homepage.css")
+
+block main
+    main.homepage__main
+        include ./components/app-header.pug
+        header.homepage__hero-header
+            .gutter-container
+                h2.homepage__hero-header-title 
+                    | Build and deploy employee-facing Node.js apps in seconds
+                .homepage__hero-description
+                    p
+                        | Build tools for your team and control exactly who gets access.<br>
+                        | From simple database-export-scripts to sophisticated SPAs.
+                .homepage__hero-buttons
+                    <script src="https://fast.wistia.com/embed/medias/urc943dpd6.jsonp" async></script>
+                    <script src="https://fast.wistia.com/assets/external/E-v1.js" async></script>
+                    <span class="wistia_embed wistia_async_urc943dpd6 popover=true popoverContent=link" style="display:inline;position:relative;position:absolute;left:-99999px;top:-99999px;"><a href="#">View demo</a></span>
+                    a.button.button_secondary#wistia-play-button(href="/video", data-videoid="urc943dpd6")
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-play-circle"><circle cx="12" cy="12" r="10"></circle><polygon points="10 8 16 12 10 16 10 8"></polygon></svg>
+                        | View video
+                    script.
+                        document
+                            .querySelector("#wistia-play-button")
+                            .addEventListener("click", function(e) {
+                                e.preventDefault();
+                                document.querySelector(".wistia_async_urc943dpd6 a").click();
+                            });
+                    a.button(href="/docs") Get started now!
+
+        .homepage__example-use-cases-container.gutter-container
+            .homepage__example-use-case-strip
+                .homepage__example-use-case
+                    .homepage__example-use-case-image-container
+                        img(src="/public/images/screen-create-app.svg")
+                    .homepage__example-use-case-info
+                        .homepage__example-use-case-title Step 1: Create your app
+                        .homepage__example-use-case-caption Simply enter a name and click a button. 1 second later, a "hello world" app is already running in your Supertools instance.
+                .homepage__example-use-case
+                    .homepage__example-use-case-image-container
+                        img(src="/public/images/screen-code.svg")
+                    .homepage__example-use-case-info
+                        .homepage__example-use-case-title Step 2: Write your code
+                        .homepage__example-use-case-caption Clone the git-repo for the application you just created, make your changes and use git push to deploy the finished app to your team.
+                .homepage__example-use-case
+                    .homepage__example-use-case-image-container
+                        img(src="/public/images/screen-users.svg")
+                    .homepage__example-use-case-info
+                        .homepage__example-use-case-title Step 3: Configure users
+                        .homepage__example-use-case-caption After your internal app is live, choose which of your team mates get access to it. They can now access your app in their browser!
+
+        .homepage__section.position-relative
+            .gutter-container
+                h3.homepage__section-title Supertools is the private application platform that you don't have time to build:
+                .homepage__section-body
+                    .align-center
+                        .homepage__icon-benefit-grid
+                            +icon-benefit-item("Create and deploy Node.js apps in seconds", "/public/images/icons/node-js.svg")
+                            +icon-benefit-item("Granular access control per team member, per app", "/public/images/icons/users.svg")
+                            +icon-benefit-item("1-click sign-in for your Slack team, no extra accounts!", "/public/images/icons/slack.svg")
+                            +icon-benefit-item("Free and open source", "/public/images/icons/github.svg")
+            .lightning-1
+
+        .homepage__section.position-relative
+            .gutter-container
+                h3.homepage__section-title How it works:
+                .homepage__section-body
+                    .homepage__how-it-works-container
+                        .homepage__how-it-works-annotation.homepage__how-it-works-annotation_sidebar
+                            | Employees see all internal apps they have access to in one place.<br> ↓
+                            //- | Members of your team see all the apps they have access to in the sidebar.
+                        img.homepage__how-it-works-image(src="/public/images/how-it-works.svg", width="700", height="514")
+                        .homepage__how-it-works-annotation.homepage__how-it-works-annotation_app
+                            | ↑<br> Each app runs in a private cloud. Authorized team mates access it over a proxy to ensure secure &amp; authenticated access.
+            .lightning-2
+
+        .homepage__section.position-relative
+            .gutter-container
+                h3.homepage__section-title Create and deploy apps in 5 seconds:
+                .homepage__section-body
+                    .homepage__dx-benefit-list
+                        +dx-benefit-item("module.exports = express();", "Apps on Supertools are Express applications")
+                        +dx-benefit-item("$ yarn dev", "Develop locally")
+                        +dx-benefit-item("$ git push", "Deploy with git push")
+                        +dx-benefit-item("DATABASE_PASSWORD = ******", "Secure secrets management included")
+            .lightning-3
+
+        .homepage__section.pb-0
+            .gutter-container
+                h3.homepage__section-title Save engineering time and money
+                .homepage__section-body
+                    .homepage__money-savers
+                        .homepage__money-saver
+                            h4.homepage__money-saver-title Save development time and costs
+                            .homepage__money-saver-description
+                                | Building a robust access control system for internal apps is no easy feat.
+                                | It can easily keep even an experienced developer busy for <strong class="nowrap">2 months</strong>.
+                            .homepage__money-saver-summary
+                                | Save <span class="homepage__money-saver-amount">8,000€</span>
+                            .homepage__money-saver-disclaimer
+                                | If one engineer costs your company just 4,000€ per month
+                        .homepage__money-saver
+                            h4.homepage__money-saver-title Save monthly maintenance costs
+                            .homepage__money-saver-description
+                                | Engineering time spent on maintaining your own access control system
+                                | as well as the internal apps that integrate with it,
+                                | comes down to at least <strong class="nowrap">2 days per month</strong>.
+                            .homepage__money-saver-summary
+                                | Save <span class="homepage__money-saver-amount">400€/month</span>
+                            .homepage__money-saver-disclaimer
+                                | If one engineer costs your company just 4,000€ per month
+                    .homepage__money-saver-conclusion
+                        | On average, Supertools saves companies 12,800€ in the first year.
+
+        .homepage__section.pb-0#demo
+            .gutter-container
+                h3.homepage__section-title Schedule a demo
+            .homepage__section-body
+                .homepage__section-half-bg-100
+                    .gutter-container
+                        .homepage__demo-box.shadow-default
+                            form#demo-form.homepage__demo-form(action="/demo", method="POST")
+                                label(for="demo-name") Name
+                                input#demo-name.input.width-full(type="text", name="name", required)
+                                label(for="demo-email") Work email
+                                input#demo-email.input.width-full(type="email", name="email", required)
+                                label(for="demo-company") Company
+                                input#demo-company.input.width-full(type="text", name="company", required)
+                                label(for="demo-job") Job
+                                input#demo-job.input.width-full(type="text", name="job", required)
+                                button.button(href="/signup") Schedule a demo!
+                            .homepage__demo-disclaimer We'll get back to you within 24 hours. Your data is safe and will never be shared with others.
+
+        .homepage__section.bg-gray-100
+            .gutter-container
+                h3.homepage__section-title Frequently asked questions
+                .homepage__section-body
+                    .slim-container
+                        +faq-item("Do I have to integrate my apps with Supertools somehow?", "No. Supertools makes no assumptions about your app. There's no wiring or boilerplate necessary. Just export an Express instance and you're good to go!")
+                        +faq-item("Can I deploy apps that use private npm packages?", "Yes. There's a setting in the preferences of your Supertools account.")
+                        +faq-item("Which frameworks does Supertools support?", "You can use any client-side framework you want. Just setup a build step with something like Webpack or Parcel and use React, Angular or any other framework of your choice. Build steps are optional and not required but every app must export an Express-app.")
+                        +faq-item("Do I get SSH access to my team's Supertools servers?", "In order to keep our systems secure and maintainable, we don't allow you to get direct SSH access to the servers of your Supertools instance. If you have special system requirements, please don't hesitate to <a href=\"mailto:maximilian.schmitt@googlemail.com\">contact us</a> and we'll work something out.")
+                        +faq-item("Does Supertools support PHP, Go or other languages apart from Node.js?", "We're currently concentrating on making the developer experience for Node.js as good as possible, but we would like to support many languages and runtimes in the future.")
+                        +faq-item("Are my apps and data safe on the Supertools servers?", "Yes. Security of our users' sensitive data and applications is a top priority for Supertools. Read the documentation to learn how Supertools keeps your team's internal apps safe.")
+                        +faq-item("Can I try Supertools before I buy?", "Sure! Please <a href=\"mailto:maximilian.schmitt@googlemail.com\">contact us</a> and we'll set you up with a trial account.")

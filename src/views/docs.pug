@@ -1,0 +1,29 @@
+extends ./layouts/master.pug
+
+block styles
+    link(rel="stylesheet", href="/public/styles/docs.css")
+
+block main
+    .docs__main
+        include ./components/app-header.pug
+
+        .gutter-container
+            .docs__main-panel
+                .docs__main-panel-sidebar
+                    each category in categories
+                        p.docs__nav-header #{category.title}
+                        each post in category.posts
+                            a.docs__nav-link(href=post.href, class={active: activePost.href === post.href}) #{post.title}
+
+                .docs__main-panel-content
+                    .docs__main-panel-content-body !{activePost.body}
+                    if previousPost || nextPost
+                        .docs__main-panel-content-links
+                            if previousPost
+                                .docs__previous-post-container
+                                    div Previously:
+                                    a(href=previousPost.href) #{previousPost.title}
+                            if nextPost
+                                .docs__next-post-container
+                                    div Next:
+                                    a(href=nextPost.href) #{nextPost.title}
