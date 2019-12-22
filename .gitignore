@@ -1,0 +1,6 @@
+.vscode
+node_modules
+*.log
+.env
+src/public/styles
+!instance-provisioning/files/supertools/.env

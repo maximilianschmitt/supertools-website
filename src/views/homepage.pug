@@ -1,0 +1,49 @@
+extends layouts/master.pug
+
+block styles
+    link(rel="stylesheet", href="/public/styles/homepage.css")
+
+block main
+    .gutter-container.bg-100
+        main.homepage__main
+            .slim-container.align-center
+                h1.app-logo
+                    a.app-logo-link(href="/")
+                        img.app-logo-image(src="/public/images/logo.svg", width="32", height="32")
+                        | #{appName}
+                p.homepage__main-headline The server that hosts your internal Node.js apps privately for your team mates.
+                div.homepage__buttons
+                    a.button(href="https://github.com/maximilianschmitt/supertools") Contribute
+                    a.button(href="/docs") View docs
+            
+                hr.slim-hr
+
+                .homepage__explainer
+                    img.homepage__explainer-image(srcset="/public/images/explainer-apps@2x.png 2x, /public/images/explainer-apps.png", src="/public/images/explainer-apps.png")
+                    .homepage__explainer-text All your team's admin tools in one place. Deployed safely as Node.js apps to your Supertools server.
+
+                .homepage__explainer
+                    img.homepage__explainer-image(srcset="/public/images/explainer-user-access@2x.png 2x, /public/images/explainer-user-access.png", src="/public/images/explainer-user-access.png")
+                    .homepage__explainer-text Built-in authentication and access control for all your apps.<br> No code required.
+
+                .homepage__explainer
+                    img.homepage__explainer-image(srcset="/public/images/explainer-platform@2x.png 2x, /public/images/explainer-platform.png", src="/public/images/explainer-platform.png")
+                    .homepage__explainer-text Supertools is not a framework. It's a self-hosted platform where developers can easily deploy private apps for their team mates.
+
+                .homepage__explainer
+                    img.homepage__explainer-image(srcset="/public/images/explainer-one-account@2x.png 2x, /public/images/explainer-one-account.png", src="/public/images/explainer-one-account.png")
+                    .homepage__explainer-text Each team member gets one account to access all their apps and tools. Optionally sign in with Slack.
+
+                .homepage__explainer
+                    img.homepage__explainer-image(srcset="/public/images/explainer-web-interface@2x.png 2x, /public/images/explainer-web-interface.png", src="/public/images/explainer-web-interface.png")
+                    .homepage__explainer-text You get a clean web interface to manage users, permissions, apps, environment variables, logs, etc.
+
+                .homepage__explainer
+                    img.homepage__explainer-image(srcset="/public/images/explainer-open-source@2x.png 2x, /public/images/explainer-open-source.png", src="/public/images/explainer-open-source.png")
+                    .homepage__explainer-text Supertools is free and open source.
+
+                hr.slim-hr
+        
+                p.homepage__learn-more-headline Want to learn more?
+                div.homepage__buttons
+                    a.button(href="/docs") Read the docs

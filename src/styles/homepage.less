@@ -1,0 +1,62 @@
+@import "./_common.less";
+
+.homepage__main {
+    min-height: 100vh;
+    background: @color-bg-100;
+    padding: 15vh 0;
+}
+
+.homepage__main-headline {
+    font-size: 20px;
+    padding-top: 20px;
+    line-height: 1.2;
+}
+
+@bp-scale-down-explainer-images: 374px;
+.homepage__explainer {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+    > * + * {
+        margin-left: 20px;
+    }
+
+    & + & {
+        margin-top: 50px;
+    }
+
+    .lt(@bp-scale-down-explainer-images, {
+        align-items: flex-start;
+    });
+}
+.homepage__explainer-image {
+    width: 155px;
+    height: 135px;
+    background: white;
+    border: 1px solid @color-border-100;
+    flex-shrink: 0;
+
+    .lt(@bp-scale-down-explainer-images, {
+        width: 45%;
+        height: auto;
+    });
+}
+.homepage__explainer-text {
+    font-size: 16px;
+    text-align: left;
+    min-width: 0;
+}
+
+.homepage__learn-more-headline {
+    font-size: 20px;
+    line-height: 1.2;
+}
+
+.homepage__buttons {
+    padding-top: 30px;
+
+    > * + * {
+        margin-left: 20px;
+    }
+}

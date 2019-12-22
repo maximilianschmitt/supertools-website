@@ -1,0 +1,9 @@
+.app-header.color-bg-gray-100(style=(appHeaderBg ? `background: ${appHeaderBg};` : ''))
+    h1.app-logo
+        a.app-logo-link(href="/")
+            img.app-logo-image(src="/public/images/logo.svg", width="32", height="32")
+            | #{appName}
+    nav.app-header__nav.ml-auto
+        a.app-header__nav-link(href="/", class={'app-header__nav-link_active': currentPath==='/'}) Home
+        a.app-header__nav-link(href="/docs", class={'app-header__nav-link_active': currentPath.startsWith('/docs')}) Docs
+        a.app-header__nav-link(href="https://github.com/maximilianschmitt/supertools") GitHub
