@@ -6,7 +6,7 @@
 
 <hr>
 
-This is the repository for the Supertools website at https://supertools.app. For the source of the Supertools server, go to [maximilianschmitt/supertools](https://github.com/maximilianschmitt/supertools).
+This is the repository for the Supertools website at https://supertools.maximilianschmitt.me. For the source of the Supertools server, go to [maximilianschmitt/supertools](https://github.com/maximilianschmitt/supertools).
 
 ## Installation
 
