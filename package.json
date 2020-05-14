@@ -1,7 +1,7 @@
 {
     "scripts": {
         "start": "node src/main.js",
-        "deploy": "git push beta beta:master",
+        "deploy": "git push dokku",
         "dev": "nodemon src/main.js -e js,md,json",
         "sync": "browser-sync start --proxy=localhost:3000 --files='**/*.css, **/*.pug, **/*.js' --ignore=node_modules --no-ui --no-notify",
         "lint": "eslint src instance-provisioning"
